@@ -1,12 +1,13 @@
 html, body {
-    margin: 0;
-    height: 100%;
-}
-
-#main {
     background: black;
     padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: 'Segoe UI Historic','Segoe UI';
+
 }
+
+
 
 
 
@@ -24,8 +25,7 @@ html, body {
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
      /* Add a pointer on hover */
     flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: baseline;
+    align-items: center;
 }
 .menu-container{
     display: inline;
@@ -42,27 +42,34 @@ html, body {
 .first-column-menu{
     justify-content: left;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 1vw;
+    padding-left:1.5vw;
 }
 .right-column-menu{
     display: flex;
     align-items: baseline;
     justify-content: flex-end;
+    padding-right: 1vw;
 }
 .icon-button{
     border: 0; 
     background: transparent;
-    padding: 0px;
+    padding:0px;
 }
 
 .icon{
-    margin: 0.1vh 0.1vw 0.1vh 0.1vw ;
-    width: 2vw;
-    height: 2vh;
-    flex-grow: auto;
+    margin: -0.2vw;
+    width: 1.4vw;
+    height: 1.4vw;
+    flex: 1;
 }
 
+.circle-icon{
+    border-radius: 90%;
+    background:  #3E4042;
+    border: 3px solid   #3E4042;
+}
 
 
 #logo{
@@ -81,16 +88,16 @@ html, body {
 }
 
 #main-col{
-    flex:4;
-    width:100vw;
-    height: 100vh;
+    flex:4.35;
+    width:100%;
+    height: 100%;
 }
 
 #secondary-col{
-    background-color: gray;
+    background-color: #242526;
     flex:1;
-    width:100vw;
-    height: 100vh;
+    width:100%;
+    height: 100%;
 }
 
 .post{
@@ -100,10 +107,62 @@ html, body {
 #upper-part-post{
     flex:1;
     height: 6vh;
+    border-bottom: 1px solid #3E4042;
 }
+
 
 #main-part-post{
     flex:14;
 }
+
+#main-title-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1vh 1vw 1vh 1vw;
+    width: 100%;
+    gap:0px;
+}
+
+#inner-title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#user-title{
+    flex: 0;
+    color: #E4E6EB ;
+    font-size:15px ;
+    font-weight: bolder;
+}
+
+.data{
+    margin: -0.1vh;
+    padding: 0.1vh;
+    color:  #B0B3B8;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+#main-post-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width:100%;
+}   
+
+#see-more{
+    align-self: flex-end;
+}
+
+.data:hover{
+    text-decoration: underline solid rgb(176, 179, 184); /* retirado do facebook, sabendo da função hover do css */
+}
+
+#user-title:hover{
+    text-decoration: underline solid rgb(228, 230, 235);
+}
 /* serão 5 colunas no menu divididas igualmente, o post, como visto no teste no monitor, é dividido em 5 colunas, sendo que as 4 primeiras são ocupadas pela imagem e a última é ocupada pelo "post" */
 /* no "menu", as 5 colunas são divididas da seguinte maneira: a primeira coluna tem o X e o logo do facebook, 2 colunas vazia, 1 coluna com as opções de iamgem e 1 coluna com as opções do facebook */
+
