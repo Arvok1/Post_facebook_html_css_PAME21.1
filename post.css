@@ -1,0 +1,109 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+#main {
+    background: black;
+    padding: 0;
+}
+
+
+
+#menu-overlay{
+    /* as informações foram retiradas e modificadas de https://www.w3schools.com/howto/howto_css_overlay.asp */
+    position: fixed; /* Sit on top of the page content */
+    display: flex; 
+    width: 100%; /* Full width (cover the whole page) */
+    height: 6.5%; /* O valor de 6.5% foi retirado de um monitor de 21 polegadas, em que o menu tem 64pixels e toda a visualização tem 954px */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #11ffee00; /* Fundo totalmente transparente */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+     /* Add a pointer on hover */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+}
+.menu-container{
+    display: inline;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 1vw;
+}
+
+.col {
+    flex:1 1 20%;
+}
+
+.first-column-menu{
+    justify-content: left;
+    display: flex;
+    align-items: baseline;
+    gap: 1vw;
+}
+.right-column-menu{
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+.icon-button{
+    border: 0; 
+    background: transparent;
+    padding: 0px;
+}
+
+.icon{
+    margin: 0.1vh 0.1vw 0.1vh 0.1vw ;
+    width: 2vw;
+    height: 2vh;
+    flex-grow: auto;
+}
+
+
+
+#logo{
+    padding: 0;
+    width:auto;
+    height:auto;
+}
+
+#view-flexbox{
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 100vw; /* Full width (cover the whole page) */
+    height: 100vh;
+}
+
+#main-col{
+    flex:4;
+    width:100vw;
+    height: 100vh;
+}
+
+#secondary-col{
+    background-color: gray;
+    flex:1;
+    width:100vw;
+    height: 100vh;
+}
+
+.post{
+    flex-direction: column;
+}
+
+#upper-part-post{
+    flex:1;
+    height: 6vh;
+}
+
+#main-part-post{
+    flex:14;
+}
+/* serão 5 colunas no menu divididas igualmente, o post, como visto no teste no monitor, é dividido em 5 colunas, sendo que as 4 primeiras são ocupadas pela imagem e a última é ocupada pelo "post" */
+/* no "menu", as 5 colunas são divididas da seguinte maneira: a primeira coluna tem o X e o logo do facebook, 2 colunas vazia, 1 coluna com as opções de iamgem e 1 coluna com as opções do facebook */
