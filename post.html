@@ -8,9 +8,14 @@
     <title>Facebook</title>
 </head>
 <body>
-    <div>
+    <div id="main-overlay">
         <div class="menu-overlay" id="menu-overlay">
             <!-- a escolha por um overlay do menu permite que a foto/postagem seja dividido em duas divs referentes a suas colunas  -->
+            <!--
+                Além disso, os ícones são montados como botões do tipo submit, dessa maneira, podemos usar a imagem como um link direto
+                Um dos problemas encontrados é que a barra de menu é fixa, em telas diferentes isso pode trazer resultados inesperados,
+                para evitar isso nesse cenário, usei overflow:hidden, dessa maneira, tudo acima do tamanho de 100vw e 100vh é cortado.
+            -->
             <div class="col first-column-menu">
                 <div>
                 <button type="submit" class="icon-button">
@@ -28,6 +33,7 @@
             </div>
             <div class="col">
                 <!-- /* vazia */ -->
+
             </div>
             <div class="col menu-container right-column-menu">
                 <div>
@@ -59,7 +65,7 @@
                 </div>
                 <div>
                     <button type="submit" class="icon-button">
-                        <img src="img/x.svg" alt="submit" class="icon circle-icon"/>
+                        <img src="img/mensagem.svg" alt="submit" class="icon circle-icon"/>
                     </button>
                 </div>
                 <div>
@@ -69,19 +75,34 @@
                 </div>
                 <div>
                     <button type="submit" class="icon-button">
-                        <img src="img/x.svg" alt="submit" class="icon circle-icon"/>
+                        <img src="img/abrir-menu.svg" alt="submit" class="icon circle-icon"/>
                     </button>
                 </div>
             </div> 
         </div>
         <div id="view-flexbox">
             <div id="main-col">
+                <button type="submit" class="icon-button">
+                    <img src="img/seta_esquerda.svg" alt="submit" class="icon circle-icon image-change-arrow"/>
+                </button>
+                <img src="img/processo_seletivo.jpg" >
+                <button type="submit" class="icon-button">
+                    <!-- tentei inverter o svg, mas sem sucesso -->
+                    <img src="img/seta_direita.svg" alt="submit" class="icon circle-icon image-change-arrow"/>
+                </button>
             </div>
-            <div class="col post" id="secondary-col">
+            <div class="post" id="secondary-col">
                 <div id="upper-part-post">
-                    <!-- div vazia, espaço pra conter o menu -->
+                    <!-- div vazia, espaço pra "conter" o menu -->
                 </div>
                 <div id="main-post-container">
+                    <!--
+                        a div "main title container" é estruturada da seguinte maneira:
+                        ela por si só é uma div row, que contém 3 itens, a foto de perfil do usuário,
+                        o nome do usuário+data da postagem e o ícone de "mais opções".
+                        O item usuário+data é organizado em um container próprio, em column, que permite que fiquem um acima do outro
+    
+                    -->
                     <div id="main-title-container">
                         <div>
                             <button type="submit" class="icon-button">
@@ -98,7 +119,74 @@
                             </button>
                         </div>
                     </div>
-                    <div id="post-content"></div>
+                    <div id="post-content">
+                        <p>
+                            O PAME 21.1 têm sido incrível pra mim, eu tenho adorado participar e é um prazer pra mim.
+                            A palestra de comercial foi excelente e já estou ansioso pras próximas palestras, tenho adorado
+                            fazer essa atividade aqui e espero que as próximas sejam tão desafiadoras quanto. Em relação à um
+                            ponto a melhorar, ainda não pude ver muito, visto que estamos apenas no segundo dia. Entretanto, considero que
+                            seria interessante colocar mais atividades na capacitação, não apenas uma por dia.
+
+                        </p>
+                    </div>
+                    <!-- div row para a linha "comentários" e "compartilhamentos"
+                         Infelizmente, não consegui encontrar o problema referente à posição dos itens aqui dentro
+                    -->
+                    <div id="comments-comparts">
+                        <div class="col inner-right-content">
+                            <a class="data">2 comentários</a>
+                        </div>
+                        <div class="col inner-right-content">
+                            curtir
+                        </div>
+                    </div>
+                    <!-- 
+                    div para a interaction bar, é um container de row, as 3 colunas tem espaço igual
+                    As inner-flexbox são outros containers de row, para que o ícone e o texto fiquem 
+                    lado a lado    
+                    -->
+                    <div id="interaction-bar">
+                        <div class="col inner-flexbox button-grey">
+                            <button type="submit" class="icon-button">
+                                <img src="img/curtir.svg" alt="submit" class="icon"/>
+                            </button>
+                            <p class="text-grey">Curtir</p>
+                        </div>
+                        <div class="col inner-flexbox button-grey">
+                            <button type="submit" class="icon-button">
+                                <img src="img/comentar.svg" alt="submit" class="icon"/>
+                            </button>
+                            <p class="text-grey">Comentar</p>
+                        </div>
+                        <div class="col inner-flexbox button-grey">
+                            <button type="submit" class="icon-button">
+                                <img src="img/compartilhar.svg" alt="submit" class="icon"/>
+                            </button>
+                            <p class="text-grey">Compartilhar</p>
+                        </div>
+                    </div>
+                    <div class="comments-aglomeration-container">
+                        <div class="comment-outer-container">
+                            <button type="submit" class="icon-button">
+                                <img src="img/facebook.svg" alt="submit" class="logo comment-user-photo"/>
+                            </button>
+                            <div class="comment-inner-text-container">
+                                <a class="comment-user-name">Nome de Usuário 1</a>
+                                <p class="comment">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            </div>
+                            
+                        </div>
+                        <div class="create-a-comment-container">
+                            <button type="submit" class="icon-button">
+                                <img src="img/facebook.svg" alt="submit" class="logo"/>
+                            </button>
+                            <input placeholder="Escreva um comentário" id="write-a-comment"/>
+                        </div>
+                    </div>
+
+        
+                            
+                    </div>
                 </div>
             </div>
         </div>
